@@ -8,7 +8,8 @@ from nltk.corpus import stopwords, state_union, movie_reviews
 from nltk.tokenize import PunktSentenceTokenizer
 from nltk.stem import WordNetLemmatizer
 import pickle
-
+from sklearn.naive_bayes import MultinomialNB,BernoulliNB,GaussianNB
+from nltk.classify.scikitlearn import SklearnClassifier
 import re
 
 
@@ -189,5 +190,5 @@ if __name__ =="__main__":
 
     classifier.show_most_informative_features(15)
 
-    #if you want to save it 
+    #if you want to save it
    # saveClassifier()

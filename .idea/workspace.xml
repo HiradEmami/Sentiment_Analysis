@@ -29,19 +29,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sentiment_Analysis.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py">
+      <file leaf-file-name="SentimentAnalysis_mod.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/SentimentAnalysis_mod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="191" column="28" lean-forward="false" selection-start-line="191" selection-start-column="28" selection-end-line="191" selection-end-column="28" />
+            <state relative-caret-position="-3963">
+              <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#497#532#0" expanded="false" />
-                <element signature="e#2341#2617#0" expanded="false" />
-                <element signature="e#2650#2977#0" expanded="false" />
-                <element signature="e#3012#3404#0" expanded="false" />
-                <element signature="e#3696#4006#0" expanded="false" />
+                <element signature="e#621#656#0" expanded="false" />
+                <element signature="e#2465#2741#0" expanded="false" />
+                <element signature="e#2774#3101#0" expanded="false" />
+                <element signature="e#3136#3528#0" expanded="false" />
+                <element signature="e#3820#4130#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainApplication.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/mainApplication.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,6 +73,7 @@
         <option value="$PROJECT_DIR$/Sentiment_Analysis/cdSentimentAnalysis.py" />
         <option value="$PROJECT_DIR$/Sentiment_Analysis/CreateDataSet.py" />
         <option value="$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py" />
+        <option value="$PROJECT_DIR$/Sentiment_Analysis/mainApplication.py" />
       </list>
     </option>
   </component>
@@ -167,7 +177,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Sentiment_Analysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Hirad Gorgoroth\Documents\GitHub\Sentiment_Analysis\Sentiment_Analysis\SentimentAnalysis_mod.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -336,18 +346,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py">
+    <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/SentimentAnalysis_mod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="191" column="28" lean-forward="false" selection-start-line="191" selection-start-column="28" selection-end-line="191" selection-end-column="28" />
+        <state relative-caret-position="-3963">
+          <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#497#532#0" expanded="false" />
-            <element signature="e#2341#2617#0" expanded="false" />
-            <element signature="e#2650#2977#0" expanded="false" />
-            <element signature="e#3012#3404#0" expanded="false" />
-            <element signature="e#3696#4006#0" expanded="false" />
+            <element signature="e#621#656#0" expanded="false" />
+            <element signature="e#2465#2741#0" expanded="false" />
+            <element signature="e#2774#3101#0" expanded="false" />
+            <element signature="e#3136#3528#0" expanded="false" />
+            <element signature="e#3820#4130#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/mainApplication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
