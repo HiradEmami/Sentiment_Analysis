@@ -15,10 +15,11 @@
       <file leaf-file-name="CreateDataSet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/CreateDataSet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="599">
+              <caret line="163" column="4" lean-forward="true" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="81" />
               <folding>
                 <element signature="e#2#21#0" expanded="true" />
+                <element signature="e#1046#1200#0" expanded="false" />
                 <element signature="e#1276#1769#0" expanded="false" />
                 <element signature="e#1893#2169#0" expanded="false" />
                 <element signature="e#2202#2529#0" expanded="false" />
@@ -32,10 +33,16 @@
       <file leaf-file-name="Sentiment_Analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1069">
-              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="588">
+              <caret line="96" column="36" lean-forward="true" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#483#518#0" expanded="false" />
+                <element signature="e#863#1017#0" expanded="false" />
+                <element signature="e#1201#1890#0" expanded="false" />
+                <element signature="e#1920#2196#0" expanded="false" />
+                <element signature="e#2229#2556#0" expanded="false" />
+                <element signature="e#2591#2983#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -267,7 +274,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298573" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -288,7 +295,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Sentiment_Analysis/CreateDataSet.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -303,10 +317,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/CreateDataSet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="599">
+          <caret line="163" column="4" lean-forward="true" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="81" />
           <folding>
             <element signature="e#2#21#0" expanded="true" />
+            <element signature="e#1046#1200#0" expanded="false" />
             <element signature="e#1276#1769#0" expanded="false" />
             <element signature="e#1893#2169#0" expanded="false" />
             <element signature="e#2202#2529#0" expanded="false" />
@@ -318,10 +333,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sentiment_Analysis/Sentiment_Analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="588">
+          <caret line="96" column="36" lean-forward="true" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#483#518#0" expanded="false" />
+            <element signature="e#863#1017#0" expanded="false" />
+            <element signature="e#1201#1890#0" expanded="false" />
+            <element signature="e#1920#2196#0" expanded="false" />
+            <element signature="e#2229#2556#0" expanded="false" />
+            <element signature="e#2591#2983#0" expanded="false" />
           </folding>
         </state>
       </provider>
