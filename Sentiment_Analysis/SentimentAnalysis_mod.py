@@ -3,18 +3,47 @@ import random
 import nltk
 from nltk.tokenize import word_tokenize,sent_tokenize
 from nltk.sentiment import sentiment_analyzer
-from nltk.twitter import Twitter
+from sklearn.linear_model import LogisticRegression, SGDClassifier
 from nltk.corpus import stopwords, state_union, movie_reviews
 from nltk.tokenize import PunktSentenceTokenizer
 from nltk.stem import WordNetLemmatizer
+from statistics import mode
+from nltk.classify import ClassifierI
+from statistics import mode
+
 import pickle
-from sklearn.naive_bayes import MultinomialNB,BernoulliNB,GaussianNB
+
 from nltk.classify.scikitlearn import SklearnClassifier
 import re
 
 
+
+class VoteClassifier(ClassifierI):
+    def __init__(self, *classifiers):
+        self._classifiers = classifiers
+
+    def classify(self, features):
+        votes = []
+        for c in self._classifiers:
+            v = c.classify(features)
+            votes.append(v)
+        return mode(votes)
+    def confidence(self, features):
+        votes = []
+        for c in self._classifiers:
+            v = c.classify(features)
+            votes.append(v)
+
+        choice_votes = votes.count(mode(votes))
+        conf = choice_votes / len(votes)
+        return conf
+
 #function to tokenize a text based on its Sentences (split sentences)
 #Returns a List of tokenized sentences
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB
+from sklearn.svm import SVC, LinearSVC, NuSVC
+
+
 def sentenceTokenize(dat):
     return sent_tokenize(dat,'english')
 
@@ -108,7 +137,7 @@ def identifyNamedEntity(dat):
            namedENT= nltk.ne_chunk(tagged,binary=True)
 
            print (len(namedENT))
-           print namedENT
+           print (namedENT)
            AnswerList.append(tagged)
    except Exception as e:
        print (str(e))
@@ -144,6 +173,11 @@ def saveClassifier():
     save_classifier.close()
 
 
+def performSentimentAnalysis(text):
+    feats = find_features(text)
+    return voted_classifier.classify(feats),voted_classifier.confidence(feats)
+
+
 if __name__ =="__main__":
     #reading the corpus
     movieReviews=readMovieReviews()
@@ -161,7 +195,7 @@ if __name__ =="__main__":
 
     all_words=nltk.FreqDist(all_words)
 
-    word_features = [w[0] for w in sorted(all_words.items(), key=lambda (k, v): v, reverse=True)[:5000]]
+    word_features = [w[0] for w in sorted(all_words.items(), key=lambda k_v: k_v[1], reverse=True)[:3000]]
 
     #print (word_features)
    # print ('daster ')
@@ -186,9 +220,62 @@ if __name__ =="__main__":
 
     classifier = nltk.NaiveBayesClassifier.train(training_set)
 
-    print("Classifier accuracy percent:", (nltk.classify.accuracy(classifier, testing_set)) * 100)
-
     classifier.show_most_informative_features(15)
+    print(" Original Classifier accuracy percent:", (nltk.classify.accuracy(classifier, testing_set)) * 100)
 
+
+
+    MNB_classifier = SklearnClassifier(MultinomialNB())
+    MNB_classifier.train(training_set)
+    print("MultinomialNB accuracy percent:", nltk.classify.accuracy(MNB_classifier, testing_set)*100)
+
+    BNB_classifier = SklearnClassifier(BernoulliNB())
+    BNB_classifier.train(training_set)
+    print("BernoulliNB accuracy percent:", nltk.classify.accuracy(BNB_classifier, testing_set)*100)
     #if you want to save it
    # saveClassifier()
+
+    LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
+    LogisticRegression_classifier.train(training_set)
+    print("LogisticRegression_classifier accuracy percent:",
+          (nltk.classify.accuracy(LogisticRegression_classifier, testing_set)) * 100)
+
+    SGDClassifier_classifier = SklearnClassifier(SGDClassifier())
+    SGDClassifier_classifier.train(training_set)
+    print("SGDClassifier_classifier accuracy percent:",
+          (nltk.classify.accuracy(SGDClassifier_classifier, testing_set)) * 100)
+
+   #SVC_classifier = SklearnClassifier(SVC())
+    #SVC_classifier.train(training_set)
+   #print("SVC_classifier accuracy percent:", (nltk.classify.accuracy(SVC_classifier, testing_set)) * 100)
+
+    LinearSVC_classifier = SklearnClassifier(LinearSVC())
+    LinearSVC_classifier.train(training_set)
+    print("LinearSVC_classifier accuracy percent:", (nltk.classify.accuracy(LinearSVC_classifier, testing_set)) * 100)
+
+    NuSVC_classifier = SklearnClassifier(NuSVC())
+    NuSVC_classifier.train(training_set)
+    print("NuSVC_classifier accuracy percent:", (nltk.classify.accuracy(NuSVC_classifier, testing_set)) * 100)
+
+    voted_classifier = VoteClassifier(classifier,
+                                      NuSVC_classifier,
+                                      LinearSVC_classifier,
+                                      SGDClassifier_classifier,
+                                      MNB_classifier,
+                                      BNB_classifier,
+                                      LogisticRegression_classifier)
+
+    print("voted_classifier accuracy percent:", (nltk.classify.accuracy(voted_classifier, testing_set)) * 100)
+
+    print("Classification:", voted_classifier.classify(testing_set[0][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[0][0]) * 100, "Original Review:", testing_set[0][1])
+    print("Classification:", voted_classifier.classify(testing_set[1][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[1][0]) * 100, "Original Review:", testing_set[1][1])
+    print("Classification:", voted_classifier.classify(testing_set[2][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[2][0]) * 100, "Original Review:", testing_set[2][1])
+    print("Classification:", voted_classifier.classify(testing_set[3][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[3][0]) * 100, "Original Review:", testing_set[3][1])
+    print("Classification:", voted_classifier.classify(testing_set[4][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[4][0]) * 100, "Original Review:", testing_set[4][1])
+    print("Classification:", voted_classifier.classify(testing_set[5][0]), "Confidence %:",
+          voted_classifier.confidence(testing_set[5][0]) * 100, "Original Review:", testing_set[5][1])
